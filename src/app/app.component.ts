@@ -1,13 +1,25 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { QuestionBase } from './models/question-base';
+import { QuestionService } from './services/question.service';
+import { Observable } from 'rxjs';
+import { DynamicFormComponent } from './sharedComponents/dynamic-form/dynamic-form.component';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'app-root',
+  template: `
+    <div>
+      <h2>Job Application for Heroes</h2>
+      <app-dynamic-form [questions]="questions$ | async"></app-dynamic-form>
+    </div>
+  `,
+  providers: [QuestionService],
+  imports: [AsyncPipe, DynamicFormComponent],
 })
 export class AppComponent {
-  title = 'newAngular';
+  questions$: Observable<QuestionBase<any>[]>;
+  constructor(service: QuestionService) {
+    this.questions$ = service.getQuestions();
+  }
 }

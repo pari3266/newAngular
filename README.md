@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+## I made this project with the purpose of learning and collecting data. I used these items in my project
+
+Angular 18 (app.config, app.routs)
+
+Reactive Forms (app-dynamic-form, app-dynamic-form-question)
+
+**https://angular.dev/guide/forms/reactive-forms
+
+
+SSR (for use ssr : npm run build:ssr, npm run serve:ssr:newAngular) 
+
+** SSR (Server-Side Rendering) in Angular allows your Angular application to render pages on the server instead of the client. This can improve performance, especially for users on slow networks, and enhance SEO (Search Engine Optimization) because search engines can index the content more easily. With SSR, the server sends a fully rendered page to the client, and then Angular takes over for any subsequent interactions.
+
+** https://angular.dev/guide/ssr
+
+
+
+
