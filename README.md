@@ -185,4 +185,14 @@ https://v17.angular.io/guide/dynamic-component-loader
 The NgComponentOutlet directive can be used to instantiate components and insert them into the current view. 
 This directive allows you to provide a component class that should be rendered, as well as component inputs to be used during initialization.
 
+## SPA
 
+A Single Page Application (SPA) is a type of web application or website that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. This results in faster transitions and a more fluid user experience, similar to that of a desktop application.
+
+Angular is a popular framework for building SPAs. It allows developers to create rich, interactive applications with a smooth, responsive user interface.
+
+Key Characteristics of SPAs
+Dynamic Loading: Only necessary content is loaded dynamically, reducing the amount of data transferred and improving speed.
+Client-Side Routing: Angular uses client-side routing to change views or components without reloading the page. This is achieved through Angular’s RouterModule.
+Enhanced User Experience: The application feels faster and more responsive because there’s no full-page reload.
+Separation of Concerns: Angular’s architecture promotes a clean separation between application logic, UI logic, and data handling.
