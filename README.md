@@ -176,3 +176,13 @@ server {
         proxy_cache_bypass $http_upgrade;
     }
 }
+
+
+## Dynamic components
+
+https://v17.angular.io/guide/dynamic-component-loader
+
+The NgComponentOutlet directive can be used to instantiate components and insert them into the current view. 
+This directive allows you to provide a component class that should be rendered, as well as component inputs to be used during initialization.
+
+
