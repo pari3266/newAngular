@@ -209,7 +209,7 @@ Enhanced User Experience: The application feels faster and more responsive becau
 Separation of Concerns: Angular’s architecture promotes a clean separation between application logic, UI logic, and data handling.
 
 
-Angular Call Function Every X Seconds Example
+## Angular Call Function Every X Seconds Example
 https://www.itsolutionstuff.com/post/angular-call-function-every-x-seconds-exampleexample.html
 
 this.subscription = timer(0, 5000).pipe(
