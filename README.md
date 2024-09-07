@@ -38,6 +38,17 @@ Angular 18 (app.config, app.routs)
 
 ## SSR (for use ssr : npm run build:ssr, npm run serve:ssr:newAngular) 
 
+in architct build options, in the angular.json file:
+ for use ssr we should write this:
+   
+   ,
+   "scripts": [],
+   "server": "src/main.server.ts",
+   "prerender": true,
+   "ssr": {
+     "entry": "server.ts"
+   }
+
 ** SSR (Server-Side Rendering) in Angular allows your Angular application to render pages on the server instead of the client. This can improve performance, especially for users on slow networks, and enhance SEO (Search Engine Optimization) because search engines can index the content more easily. With SSR, the server sends a fully rendered page to the client, and then Angular takes over for any subsequent interactions.
 
 ** https://angular.dev/guide/ssr
@@ -196,3 +207,18 @@ Dynamic Loading: Only necessary content is loaded dynamically, reducing the amou
 Client-Side Routing: Angular uses client-side routing to change views or components without reloading the page. This is achieved through Angular’s RouterModule.
 Enhanced User Experience: The application feels faster and more responsive because there’s no full-page reload.
 Separation of Concerns: Angular’s architecture promotes a clean separation between application logic, UI logic, and data handling.
+
+
+Angular Call Function Every X Seconds Example
+https://www.itsolutionstuff.com/post/angular-call-function-every-x-seconds-exampleexample.html
+
+this.subscription = timer(0, 5000).pipe(
+  switchMap(async () => this.API.displayNextAd())
+).subscribe(result => 
+  console.log(result)
+);
+
+
+** isPlatformBrowser Check **: The isPlatformBrowser function checks whether the code is running in the browser environment. This prevents any DOM-related code from running on the server.
+
+Conditional DOM Manipulation: The DOM-related operations (like resetScrollPosition and scrollBanner) and the scheduling of the ads are now only executed if the code is running in the browser.
