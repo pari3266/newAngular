@@ -1,24 +1,22 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, withNavigationErrorHandler, RouterModule } from '@angular/router';
+import { provideRouter, withNavigationErrorHandler } from '@angular/router';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
-      withNavigationErrorHandler((err) => {
+      withNavigationErrorHandler((err: any) => {
         console.error('Navigation error:', err);
-        // you could redirect to a fallback page here
+        // example redirect:
+        // window.location.href = '/error';
       })
     ),
     provideClientHydration(),
-    importProvidersFrom([
-      BrowserAnimationsModule,
-      RouterModule,
-    ])
+    provideAnimations() // ✅ replaces BrowserAnimationsModule
   ]
 };
