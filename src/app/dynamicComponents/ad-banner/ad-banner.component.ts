@@ -1,4 +1,4 @@
-import { AsyncPipe, NgComponentOutlet } from "@angular/common";
+import { NgComponentOutlet } from "@angular/common";
 import { Component, ElementRef, inject, OnInit, Renderer2, ChangeDetectorRef, PLATFORM_ID, Inject } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 import { AdService } from "../../services/ad.service";
@@ -7,7 +7,7 @@ import { Subscription } from "rxjs";
 @Component({
   selector: 'app-ad-banner',
   standalone: true,
-  imports: [NgComponentOutlet, AsyncPipe],
+  imports: [NgComponentOutlet],
   template: `
     <div class="ad-banner-example">
       <h3>Advertisements</h3>
